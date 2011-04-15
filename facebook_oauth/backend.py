@@ -14,7 +14,7 @@ class FacebookBackend:
         args = {
             'client_id': settings.FACEBOOK_APP_ID,
             'client_secret': settings.FACEBOOK_APP_SECRET,
-            'redirect_uri': request.build_absolute_uri(reverse('facebook.views.authenticate_view')),
+            'redirect_uri': request.build_absolute_uri(reverse('facebook_oauth.views.authenticate_view')),
             'code': token,
         }
         
@@ -58,7 +58,7 @@ class FacebookAutoUserBackend:
         args = {
             'client_id': settings.FACEBOOK_APP_ID,
             'client_secret': settings.FACEBOOK_APP_SECRET,
-            'redirect_uri': request.build_absolute_uri(reverse('facebook.views.authenticate_view')),
+            'redirect_uri': request.build_absolute_uri(reverse('facebook_oauth.views.authenticate_view')),
             'code': token,
         }
         

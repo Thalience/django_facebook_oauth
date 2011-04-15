@@ -18,7 +18,7 @@ def authenticate_view(request):
     code = request.GET.get('code')
     args = {
         'client_id': settings.FACEBOOK_APP_ID,
-        'redirect_uri': request.build_absolute_uri(reverse('facebook.views.authenticate_view')),
+        'redirect_uri': request.build_absolute_uri(reverse('facebook_oauth.views.authenticate_view')),
         #'scope': 'email,user_birthday,publish_stream',
         'scope': 'email',
     }
@@ -36,7 +36,7 @@ def authenticate_view(request):
                 return HttpResponseRedirect(return_uri)
         
         else:
-            return HttpResponseRedirect(reverse('facebook.views.register_view'))
+            return HttpResponseRedirect(reverse('facebook_oauth.views.register_view'))
     else:
         if request.GET.get('ignorereferer') != '1':
             referer = request.META.get('HTTP_REFERER')
@@ -56,7 +56,7 @@ def register_view(request):
         fb_user = FacebookUser(user=user, facebook_id=fb_profile['id'])
         fb_user.save()
         del request.session['fb_profile']
-        return HttpResponseRedirect(reverse('facebook.views.authenticate_view') + '?ignorereferer=1')
+        return HttpResponseRedirect(reverse('facebook_oauth.views.authenticate_view') + '?ignorereferer=1')
     else:
         return render_to_response('member/register-facebook.html', context_instance=RequestContext(request))
 
