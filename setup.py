@@ -9,8 +9,8 @@ setup(
     author='Jeff Dickey',
     author_email='dickeytk@gmail.com',
     url='https://github.com/Anue/django_facebook_oauth',
-    packages=['facebook'],
-    package_dir={'facebook': 'facebook'},
+    packages=['facebook_oauth'],
+    package_dir={'facebook_oauth': 'facebook_oauth'},
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',

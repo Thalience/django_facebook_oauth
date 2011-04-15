@@ -2,7 +2,7 @@
 from django.conf.urls.defaults import *
 
 # Custom
-from facebook.views import authenticate_view, logout_view, register_view, test_view
+from facebook_oauth.views import authenticate_view, logout_view, register_view, test_view
 
 urlpatterns = patterns('',
     url(r'^authenticate/?$', view=authenticate_view, name='authenticate'),

@@ -2,7 +2,7 @@
 import urllib, simplejson
 
 # Custom
-from facebook.models import FacebookUser
+from facebook_oauth.models import FacebookUser
 
 def get_facebook_profile(user):
     try:
