@@ -4,7 +4,7 @@ This is a python app to use the new Graph API authentication with Django. It use
 1. Put the files into a folder named 'facebook' in your Django project.
 2. Add the facebook context processor to `TEMPLATE_CONTEXT_PROCESSORS` in settings.py: `"facebook_oauth.context_processors.facebook",`
 3. Add the facebook authentication backend to settings.py `AUTHENTICATION_BACKENDS = ('facebook_oauth.backend.FacebookBackend')`
-4. Add facebook app to `INSTALLED_APPS` in settings.py: `'facebook',
+4. Add facebook app to `INSTALLED_APPS` in settings.py: `'facebook_oauth',
 5. Add `FACEBOOK_APP_ID` and `FACEBOOK_APP_SECRET` to settings.py
 6. Add this line to the urlpatterns in urls.py `(r'^facebook/', include('facebook_oauth.urls')),`
 7. Run `python manage.py syncdb`

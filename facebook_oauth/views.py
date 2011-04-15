@@ -11,8 +11,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 
 # Custom
-from facebook_oauth_oauth.utils import get_facebook_profile
-from facebook_oauth_oauth.models import FacebookUser
+from facebook_oauth.utils import get_facebook_profile
+from facebook_oauth.models import FacebookUser
 
 def authenticate_view(request):
     code = request.GET.get('code')
