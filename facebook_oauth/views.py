@@ -20,7 +20,7 @@ def authenticate_view(request):
         'client_id': settings.FACEBOOK_APP_ID,
         'redirect_uri': request.build_absolute_uri(reverse('facebook_oauth.views.authenticate_view')),
         #'scope': 'email,user_birthday,publish_stream',
-        'scope': 'email',
+        'scope': 'email,publish_stream',
     }
     
     if code != None:
